@@ -56,12 +56,12 @@
 </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Jimmy的前端筆記">
 <meta property="og:url" content="https://900bce.github.io/my-blog/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Jimmy的前端筆記">
 <meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Jimmy的前端筆記">
   <link rel="canonical" href="https://900bce.github.io/my-blog/">
 
 
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Jimmy的前端筆記</title>
   
 
 
@@ -123,7 +123,7 @@
     <div>
       <a href="/my-blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Jimmy的前端筆記</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -190,16 +190,162 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/02/first-post/">
+    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/02/React-新手上路-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Jimmy W.">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/my-blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Jimmy的前端筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/my-blog/2019/10/02/React-新手上路-1/" class="post-title-link" itemprop="url">React 新手上路(一)</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-02 23:33:53" itemprop="dateCreated datePublished" datetime="2019-10-02T23:33:53+08:00">2019-10-02</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-03 16:18:45" itemprop="dateModified" datetime="2019-10-03T16:18:45+08:00">2019-10-03</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="React-思維："><a href="#React-思維：" class="headerlink" title="React 思維："></a>React 思維：</h2><p>有別於以往JS邏輯將運算和輸出寫在一起，React 的操作方式是將畫面呈現和資料輸出分開，用Components的概念將介面定義好後，再把資料輸進去，每當<strong>“狀態”</strong>改變就重新render。</p>
+<h2 id="React-語法："><a href="#React-語法：" class="headerlink" title="React 語法："></a>React 語法：</h2><p>當我們想要在畫面上放一個</p>
+<p><code>&lt;div&gt;Hello World!&lt;/div&gt;</code></p>
+<p>React 中我們這樣寫</p>
+<p>// Hello.js</p>
+<pre><code>import React from &apos;react&apos;;
+
+function Hello() {
+  return &lt;div&gt;Hello World!&lt;/div&gt;
+}
+
+export default Hello;</code></pre><p>這樣就是一個React compoent了</p>
+<blockquote>
+<p>注意! Component 的名稱開頭必須為大寫。</p>
+</blockquote>
+<p>再來我們試著將 Hello 這個 component 放到畫面上</p>
+<pre><code>&lt;!-- index.html --&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>// index.js</p>
+<pre><code>import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+import Hello from &apos;./Hello&apos;;
+
+ReactDOM.render(&lt;Hello /&gt;, document.getElementById(&apos;root&apos;));</code></pre><p>這樣就完成了！</p>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props:"></a>Props:</h2><p>當component的上層需要傳遞資料給component，使用props。</p>
+<p>// Hello.js</p>
+<pre><code>import React from &apos;react&apos;;
+
+const Hello = (props) =&gt; {
+  return &lt;div&gt;{props.hello}&lt;/div&gt;
+}
+
+export default Hello;</code></pre><p>// index.js</p>
+<pre><code>import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+import Hello from &apos;./Hello&apos;;
+
+ReactDOM.render(&lt;Hello hello={&apos;Hello World!&apos;}/&gt;, document.getElementById(&apos;root&apos;));</code></pre><h2 id="STATE"><a href="#STATE" class="headerlink" title="STATE:"></a>STATE:</h2><p>我們已經知道怎麼丟props給components,<br>但component要如何和其他component互動呢？</p>
+<p><strong>利用STATE</strong></p>
+<p>STATE &gt;&gt; props</p>
+<p>當parent改變狀態(state)，再把state轉為props丟給下層，因為component只能接收props再return結果。</p>
+<p>使用class component:</p>
+<pre><code>import React, { Component } from &apos;react&apos;;
+
+class Hello extends Component {
+  constructor() {
+    super();
+    this.state = {
+      text: &apos;Hello World!&apos;
+    }
+  }
+
+  changeText = () =&gt; {
+    this.setState({
+      text: &apos;Hello React!&apos;
+    })
+  }
+
+  render() {
+    return (
+      &lt;div conClick={this.changeText}&gt;
+        &lt;HelloText text={this.state.text} /&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/02/first-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy W.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/my-blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy的前端筆記">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -293,13 +439,13 @@ let b = &apos;Okay.&apos;</code></pre>
     <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/01/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Jimmy W.">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/my-blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Jimmy的前端筆記">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -402,7 +548,7 @@ let b = &apos;Okay.&apos;</code></pre>
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+  <p class="site-author-name" itemprop="name">Jimmy W.</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -411,9 +557,18 @@ let b = &apos;Okay.&apos;</code></pre>
         
           <a href="/my-blog/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+        
       </div>
     
   </nav>
@@ -437,7 +592,7 @@ let b = &apos;Okay.&apos;</code></pre>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Jimmy W.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
   <span class="post-meta-divider">|</span>
