@@ -190,6 +190,90 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/21/React-deploy-到-Github-page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy W.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/my-blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy的前端筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/my-blog/2019/10/21/React-deploy-到-Github-page/" class="post-title-link" itemprop="url">React deploy 到 Github page</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-21 18:21:55 / Modified: 18:42:06" itemprop="dateCreated datePublished" datetime="2019-10-21T18:21:55+08:00">2019-10-21</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="如何將-React-部署到-Github-page-上"><a href="#如何將-React-部署到-Github-page-上" class="headerlink" title="如何將 React 部署到 Github page 上"></a>如何將 React 部署到 Github page 上</h1><p>create react app 有提供工具可以直接將 React 專案部署到各個 server 上（AWS, firebase, GH-page,…等等）。 既然Github是每個人都有用而且也是免費的，我想應該是最方便的靜態網站平台。所以今天來練習如何部署React專案到Github上。</p>
+<p>參考(<a href="https://create-react-app.dev/docs/deployment/" target="_blank" rel="noopener">https://create-react-app.dev/docs/deployment/</a>)</p>
+<h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p><strong>這一步非常重要</strong><br>將以下寫進專案的 <code>package.json</code> 中。</p>
+<pre><code>&quot;homepage&quot;: &quot;https://myusername.github.io/my-app&quot;,</code></pre><h3 id="第二部：安裝-gh-pages-以及-加入-deploy-scripts-到package-json裡面"><a href="#第二部：安裝-gh-pages-以及-加入-deploy-scripts-到package-json裡面" class="headerlink" title="第二部：安裝 gh-pages 以及 加入 deploy scripts 到package.json裡面"></a>第二部：安裝 gh-pages 以及 加入 deploy scripts 到package.json裡面</h3><pre><code>npm install --save gh-pages</code></pre><p>接著在package.json裡面加入：</p>
+<pre><code>&quot;scripts&quot;: {
++   &quot;predeploy&quot;: &quot;npm run build&quot;,
++   &quot;deploy&quot;: &quot;gh-pages -d build&quot;,
+    &quot;start&quot;: &quot;react-scripts start&quot;,
+    &quot;build&quot;: &quot;react-scripts build&quot;,</code></pre><p>其中 <code>predeploy</code> 會在 <code>deploy</code> 時自動被執行。</p>
+<p>第三步：</p>
+<pre><code>npm run deploy</code></pre><p>第四部：</p>
+<p>在github depo的設定裡，找到github page部分的 source選項，確定有選到 gh-pages branch， 就大功告成了。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/02/React-新手上路-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -557,7 +641,7 @@ let b = &apos;Okay.&apos;</code></pre>
         
           <a href="/my-blog/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
