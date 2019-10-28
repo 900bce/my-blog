@@ -55,14 +55,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jimmy的前端筆記">
-<meta property="og:url" content="https://900bce.github.io/my-blog/archives/2019/10/index.html">
+  <meta name="description" content="React-router-dom// 最上層 // index.js import { BrowserRouter } from &amp;apos;react-router-dom&amp;apos;;  &amp;lt;BrowserRouter&amp;gt;   &amp;lt;App /&amp;gt; &amp;lt;/BrowserRouter&amp;gt;   // 下一層 // App.js import { Switch, Route }">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Router-DOM">
+<meta property="og:url" content="https://900bce.github.io/my-blog/2019/10/28/React-Router-DOM/index.html">
 <meta property="og:site_name" content="Jimmy的前端筆記">
+<meta property="og:description" content="React-router-dom// 最上層 // index.js import { BrowserRouter } from &amp;apos;react-router-dom&amp;apos;;  &amp;lt;BrowserRouter&amp;gt;   &amp;lt;App /&amp;gt; &amp;lt;/BrowserRouter&amp;gt;   // 下一層 // App.js import { Switch, Route }">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-10-28T12:32:45.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jimmy的前端筆記">
-  <link rel="canonical" href="https://900bce.github.io/my-blog/archives/2019/10/">
+<meta name="twitter:title" content="React-Router-DOM">
+<meta name="twitter:description" content="React-router-dom// 最上層 // index.js import { BrowserRouter } from &amp;apos;react-router-dom&amp;apos;;  &amp;lt;BrowserRouter&amp;gt;   &amp;lt;App /&amp;gt; &amp;lt;/BrowserRouter&amp;gt;   // 下一層 // App.js import { Switch, Route }">
+  <link rel="canonical" href="https://900bce.github.io/my-blog/2019/10/28/React-Router-DOM/">
 
 
 <script id="page-configurations">
@@ -70,13 +74,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>Archive | Jimmy的前端筆記</title>
+  <title>React-Router-DOM | Jimmy的前端筆記</title>
   
 
 
@@ -182,194 +186,137 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/28/React-Router-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy W.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/my-blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy的前端筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">React-Router-DOM
+
           
-        
-        <span class="collection-header">Um..! 5 posts in total. Keep on posting.</span>
-      </div>
-      
+        </h1>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-  
-  
+              
+                
+              
 
-  
+              <time title="Created: 2019-10-28 20:30:37 / Modified: 20:32:45" itemprop="dateCreated datePublished" datetime="2019-10-28T20:30:37+08:00">2019-10-28</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="React-router-dom"><a href="#React-router-dom" class="headerlink" title="React-router-dom"></a>React-router-dom</h1><pre><code>// 最上層
+// index.js
+import { BrowserRouter } from &apos;react-router-dom&apos;;
+
+&lt;BrowserRouter&gt;
+  &lt;App /&gt;
+&lt;/BrowserRouter&gt;
+
+
+// 下一層
+// App.js
+import { Switch, Route } from &apos;react-router-dom&apos;;
+
+const App = () =&gt; {
+  return (
+    &lt;Navbar /&gt;
+    &lt;Switch&gt;
+      &lt;Route exact path=&quot;/&quot; component={ProductList} /&gt;
+      &lt;Route path=&quot;/details&quot; component={Details} /&gt;
+      &lt;Route path=&quot;/cart&quot; component={Cart} /&gt;
+      &lt;Route component={Default} /&gt;
+    &lt;/Switch&gt;
+  )
+}
+
+
+// Navbar.js
+import { Link } from &apos;react-router-dom&apos;;
+
+function Navbar () {
+
+  ...
+
+  &lt;Link to=&quot;/cart&quot;&gt;
+    Cart
+  &lt;/Link&gt;
+
+}</code></pre>
     </div>
-  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-28T20:30:37+08:00"
-              content="2019-10-28">
-          10-28
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    
+    
+    
         
-          <a class="post-title-link" href="/my-blog/2019/10/28/React-Router-DOM/" itemprop="url">
-            <span itemprop="name">React-Router-DOM</span>
-          </a>
+      
+
+      <footer class="post-footer">
+
         
-      </h2>
 
-    </header>
-  </article>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/my-blog/2019/10/21/React-deploy-到-Github-page/" rel="next" title="React deploy 到 Github page">
+                  <i class="fa fa-chevron-left"></i> React deploy 到 Github page
+                </a>
+              
+            </div>
 
+            <span class="post-nav-divider"></span>
 
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-21T18:21:55+08:00"
-              content="2019-10-21">
-          10-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
-          <a class="post-title-link" href="/my-blog/2019/10/21/React-deploy-到-Github-page/" itemprop="url">
-            <span itemprop="name">React deploy 到 Github page</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-02T23:33:53+08:00"
-              content="2019-10-02">
-          10-02
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/my-blog/2019/10/02/React-新手上路-1/" itemprop="url">
-            <span itemprop="name">React 新手上路(一)</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-02T01:00:01+08:00"
-              content="2019-10-02">
-          10-02
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/my-blog/2019/10/02/first-post/" itemprop="url">
-            <span itemprop="name">first-post</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-01T20:20:52+08:00"
-              content="2019-10-01">
-          10-01
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/my-blog/2019/10/01/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
@@ -386,6 +333,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -398,6 +350,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-router-dom"><span class="nav-number">1.</span> <span class="nav-text">React-router-dom</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

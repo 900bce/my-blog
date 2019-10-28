@@ -190,6 +190,115 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/28/React-Router-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy W.">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/my-blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy的前端筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/my-blog/2019/10/28/React-Router-DOM/" class="post-title-link" itemprop="url">React-Router-DOM</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-28 20:30:37 / Modified: 20:32:45" itemprop="dateCreated datePublished" datetime="2019-10-28T20:30:37+08:00">2019-10-28</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="React-router-dom"><a href="#React-router-dom" class="headerlink" title="React-router-dom"></a>React-router-dom</h1><pre><code>// 最上層
+// index.js
+import { BrowserRouter } from &apos;react-router-dom&apos;;
+
+&lt;BrowserRouter&gt;
+  &lt;App /&gt;
+&lt;/BrowserRouter&gt;
+
+
+// 下一層
+// App.js
+import { Switch, Route } from &apos;react-router-dom&apos;;
+
+const App = () =&gt; {
+  return (
+    &lt;Navbar /&gt;
+    &lt;Switch&gt;
+      &lt;Route exact path=&quot;/&quot; component={ProductList} /&gt;
+      &lt;Route path=&quot;/details&quot; component={Details} /&gt;
+      &lt;Route path=&quot;/cart&quot; component={Cart} /&gt;
+      &lt;Route component={Default} /&gt;
+    &lt;/Switch&gt;
+  )
+}
+
+
+// Navbar.js
+import { Link } from &apos;react-router-dom&apos;;
+
+function Navbar () {
+
+  ...
+
+  &lt;Link to=&quot;/cart&quot;&gt;
+    Cart
+  &lt;/Link&gt;
+
+}</code></pre>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://900bce.github.io/my-blog/my-blog/2019/10/21/React-deploy-到-Github-page/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -641,7 +750,7 @@ let b = &apos;Okay.&apos;</code></pre>
         
           <a href="/my-blog/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
